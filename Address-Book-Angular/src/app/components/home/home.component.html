@@ -1,0 +1,39 @@
+<app-header></app-header>
+<div class="home-content">
+  <div class="home-header">
+    <div class="home-header-content">
+      <div class="address-details-text home-heading">Person Details</div>
+<!--      <a class="add-button" (click)="goToAddData()"><mat-icon>add</mat-icon>Add User</a>-->
+      <button class="add-button" (click)="goToAddData()"><mat-icon>add</mat-icon>Add User</button>
+    </div>
+  </div>
+
+  <div class="main-table">
+    <table class="table">
+      <thead>
+        <th class="name" (click)="sortByName()">Full Name</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Zip Code</th>
+        <th>Phone Number</th>
+        <th>Action</th>
+      </thead>
+
+     <tbody>
+     <tr *ngFor="let person of addressBookArray" class="row-main">
+       <td >{{person.name}}</td>
+       <td>{{person.address}}</td>
+       <td>{{person.city}}</td>
+       <td>{{person.state}}</td>
+       <td>{{person.zip_code}}</td>
+       <td>{{person.phone_no}}</td>
+       <td>
+         <span class="delete-icon icon" (click)="deleteAddressBookData(person.id)"><mat-icon>delete</mat-icon></span>
+         <span class="icon" ><mat-icon>edit</mat-icon></span>
+       </td>
+     </tr>
+     </tbody>
+    </table>
+  </div>
+</div>
